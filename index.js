@@ -17,7 +17,7 @@ class Formatter {
             return word;
         }
       });
-      return captilaize(word);
+      return capitalize(word);
     });
     return titleizedWords.join(' ');
   }
