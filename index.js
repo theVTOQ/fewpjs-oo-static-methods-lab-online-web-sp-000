@@ -19,5 +19,6 @@ class Formatter {
       });
       return captilaize(word);
     });
+    return titleizedWords.join(' ');
   }
 }
