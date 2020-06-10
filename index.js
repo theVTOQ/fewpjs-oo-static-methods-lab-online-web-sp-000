@@ -11,20 +11,20 @@ class Formatter {
   static titleize(string){
     const words = string.split(' '); // .map(word => word.toLowerCase());
     const exceptions = ["the", "a", "an", "but", "of", "and", "for", "at", "by", "from"];
-    const title = capitalize(words[0]); //just a starting point
+    const titleizedWords = [this.capitalize(words[0])];
 
-    words.forEach(word => {
+    words.slice(1).forEach(word => {
       let matchFound = false;
       exceptions.forEach(exception => {
         if(word === exception){
-            title += word;
+            titleizedWords.push(word);
             matchFound = true;
         }
       });
       if(!matchFound){
-        title += this.capitalize(word);
+        titleizedWords.push(this.capitalize(word));
       }
     });
-    return title;
+    return titleizedWords.join(' ');
   }
 }
