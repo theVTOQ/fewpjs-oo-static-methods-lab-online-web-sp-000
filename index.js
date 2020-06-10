@@ -14,7 +14,7 @@ class Formatter {
     const titleizedWords = words.map(word => {
       exceptions.forEach(exception => {
         if(word === exception){
-            return word.toLowerCase();
+            return word[0].toLowerCase() + word.slice(1);
         }
       });
       return this.capitalize(word);
